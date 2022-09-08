@@ -37,6 +37,9 @@ public class Item extends StandardEntity {
     @Column(name = "TYPE")
     private String type;
 
+    @Column(name = "VOLUME")
+    private String volume;
+
     public String getName() {
         return name;
     }
@@ -99,5 +102,13 @@ public class Item extends StandardEntity {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getVolume() {
+        return volume;
+    }
+
+    public void setVolume(String volume) {
+        this.volume = volume;
     }
 }

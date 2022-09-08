@@ -17,6 +17,7 @@ create table CSGOMARKET_ITEM (
     APP_ID varchar(255),
     ICON_URL varchar(255),
     TYPE varchar(255),
+    VOLUME varchar(255),
     --
     primary key (ID)
 )^

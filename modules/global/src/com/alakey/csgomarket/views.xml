@@ -11,4 +11,9 @@
         <property name="iconUrl"/>
         <property name="type"/>
     </view>
+    <view entity="csgomarket_Item" name="item-csgotm-browseView">
+        <property name="hashName"/>
+        <property name="sellPriceText"/>
+        <property name="volume"/>
+    </view>
 </views>

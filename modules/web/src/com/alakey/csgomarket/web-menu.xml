@@ -2,5 +2,6 @@
 <menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
     <menu id="application-csgomarket" insertBefore="administration" caption="mainMsg://menu_config.application-csgomarket">
         <item screen="csgomarket_Item.browse" caption="mainMsg://menu_config.csgomarket_Item.browse"/>
+        <item screen="csgomarket_ItemCSGOTM.browse" caption="mainMsg://menu_config.csgomarket_ItemCSGOTM.browse"/>
     </menu>
 </menu-config>

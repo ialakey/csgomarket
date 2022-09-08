@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
         xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
-        caption="msg://itemBrowse.caption"
+        caption="msg://itemCSGOTMBrowse.caption"
         focusComponent="itemsTable"
         messagesPack="com.alakey.csgomarket.web.screens.item">
     <data readOnly="true">
         <collection id="itemsDc"
                     class="com.alakey.csgomarket.entity.Item"
-                    view="item-browseView">
+                    view="item-csgotm-browseView">
             <loader id="itemsDl">
                 <query>
                     <![CDATA[select e from csgomarket_Item e]]>
@@ -30,11 +30,9 @@
             <actions>
             </actions>
             <columns>
-                <column id="name"/>
                 <column id="hashName"/>
                 <column id="sellPriceText"/>
-                <column id="salePriceName"/>
-                <column id="type"/>
+                <column id="volume"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
