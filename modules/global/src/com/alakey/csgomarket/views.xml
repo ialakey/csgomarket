@@ -16,4 +16,9 @@
         <property name="sellPriceText"/>
         <property name="volume"/>
     </view>
+    <view entity="csgomarket_UserEmployee" name="userEmployee-browseView">
+        <property name="user" view="_minimal"/>
+        <property name="tradeUrl"/>
+        <property name="balance"/>
+    </view>
 </views>

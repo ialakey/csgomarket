@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://userEmployeeBrowse.caption"
+        focusComponent="userEmployeesTable"
+        messagesPack="com.alakey.csgomarket.web.screens.useremployee">
+    <data readOnly="true">
+        <collection id="userEmployeesDc"
+                    class="com.alakey.csgomarket.entity.UserEmployee"
+                    view="userEmployee-browseView">
+            <loader id="userEmployeesDl">
+                <query>
+                    <![CDATA[select e from csgomarket_UserEmployee e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="userEmployeesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="userEmployeesTable"
+                dataLoader="userEmployeesDl">
+            <properties include=".*"/>
+        </filter>
+        <table id="userEmployeesTable"
+               width="100%"
+               dataContainer="userEmployeesDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="user"/>
+                <column id="tradeUrl"/>
+                <column id="balance"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="userEmployeesTable.create"/>
+                <button id="editBtn" action="userEmployeesTable.edit"/>
+                <button id="removeBtn" action="userEmployeesTable.remove"/>
+            </buttonsPanel>
+        </table>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>
