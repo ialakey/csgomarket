@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://itemBrowse.caption"
+        focusComponent="itemsTable"
+        messagesPack="com.alakey.csgomarket.web.screens.item">
+    <data readOnly="true">
+        <collection id="itemsDc"
+                    class="com.alakey.csgomarket.entity.Item"
+                    view="item-browseView">
+            <loader id="itemsDl">
+                <query>
+                    <![CDATA[select e from csgomarket_Item e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="itemsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="itemsTable"
+                dataLoader="itemsDl">
+            <properties include=".*"/>
+        </filter>
+        <table id="itemsTable"
+               width="100%"
+               dataContainer="itemsDc">
+            <actions>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="hashName"/>
+                <column id="sellPriceText"/>
+                <column id="salePriceName"/>
+                <column id="appName"/>
+                <column id="appId"/>
+                <column id="iconUrl"/>
+                <column id="type"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+            </buttonsPanel>
+        </table>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

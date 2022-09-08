@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+
+    <view entity="csgomarket_Item" name="item-browseView">
+        <property name="name"/>
+        <property name="hashName"/>
+        <property name="sellPriceText"/>
+        <property name="salePriceName"/>
+        <property name="appName"/>
+        <property name="appId"/>
+        <property name="iconUrl"/>
+        <property name="type"/>
+    </view>
+</views>
