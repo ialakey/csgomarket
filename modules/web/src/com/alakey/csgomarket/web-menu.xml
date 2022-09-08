@@ -4,7 +4,10 @@
         <item screen="csgomarket_Item.browse" caption="mainMsg://menu_config.csgomarket_Item.browse"/>
         <item screen="csgomarket_ItemCSGOTM.browse" caption="mainMsg://menu_config.csgomarket_ItemCSGOTM.browse"/>
     </menu>
-    <menu id="nsi" insertBefore="administration" caption="mainMsg://menu_config.nsi">
+    <menu id="case" insertBefore="administration" caption="mainMsg://menu_config.case">
+        <item screen="csgomarket_Case.browse" caption="mainMsg://menu_config.csgomarket_Case.browse"/>
+    </menu>
+    <menu id="nsi" insertAfter="administration" caption="mainMsg://menu_config.nsi">
         <item screen="csgomarket_UserEmployee.browse" caption="mainMsg://menu_config.csgomarket_UserEmployee.browse"/>
     </menu>
 </menu-config>

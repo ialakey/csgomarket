@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://caseEdit.caption"
+        focusComponent="form"
+        messagesPack="com.alakey.csgomarket.web.screens.cases">
+    <data>
+        <instance id="caseDc"
+                  class="com.alakey.csgomarket.entity.Case">
+            <view extends="_local">
+<!--                <property name="image" view="_minimal"/>-->
+                <property name="items" view="_minimal">
+                    <property name="name"/>
+                </property>
+            </view>
+            <loader/>
+<!--            <collection id="imageDc" property="image"/>-->
+        </instance>
+        <collection id="itemsDc">
+            <loader>
+                <query>select e from csgomarket_Item e</query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="caseDc">
+            <column width="350px">
+                <textField id="nameField" property="name"/>
+                <textField id="descriptionField" property="description"/>
+                <textField id="priceField" property="price"/>
+                <textField id="countField" property="count"/>
+                <lookupPickerField id="itemsField" optionsContainer="itemsDc"/>
+            </column>
+        </form>
+<!--        <groupBox id="imageBox" caption="msg://com.alakey.csgomarket.entity/Case.image">-->
+<!--            <table id="imageTable" dataContainer="imageDc" width="100%" height="200px">-->
+<!--                <actions>-->
+<!--                    <action id="add" type="add"/>-->
+<!--                    <action id="exclude" type="exclude"/>-->
+<!--                </actions>-->
+<!--                <columns>-->
+<!--                    <column id="name"/>-->
+<!--                    <column id="createDate"/>-->
+<!--                    <column id="extension"/>-->
+<!--                </columns>-->
+<!--                <buttonsPanel>-->
+<!--                    <button action="imageTable.add"/>-->
+<!--                    <button action="imageTable.exclude"/>-->
+<!--                </buttonsPanel>-->
+<!--            </table>-->
+<!--        </groupBox>-->
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

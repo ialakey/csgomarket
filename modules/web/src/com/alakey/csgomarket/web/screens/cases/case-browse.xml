@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://caseBrowse.caption"
+        focusComponent="casesTable"
+        messagesPack="com.alakey.csgomarket.web.screens.cases">
+    <data readOnly="true">
+        <collection id="casesDc"
+                    class="com.alakey.csgomarket.entity.Case">
+            <view extends="_local">
+<!--                <property name="image" view="_minimal"/>-->
+                <property name="items" view="_minimal">
+                    <property name="name"/>
+                </property>
+            </view>
+            <loader id="casesDl">
+                <query>
+                    <![CDATA[select e from csgomarket_Case e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="casesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="casesTable"
+                dataLoader="casesDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="casesTable"
+                    width="100%"
+                    dataContainer="casesDc"
+                    multiselect="true">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="description"/>
+                <column id="price"/>
+                <column id="count"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="casesTable.create"/>
+                <button id="editBtn" action="casesTable.edit"/>
+                <button id="removeBtn" action="casesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

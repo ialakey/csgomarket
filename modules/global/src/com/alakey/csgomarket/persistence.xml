@@ -4,5 +4,6 @@
 
         <class>com.alakey.csgomarket.entity.Item</class>
         <class>com.alakey.csgomarket.entity.UserEmployee</class>
+        <class>com.alakey.csgomarket.entity.Case</class>
     </persistence-unit>
 </persistence>
